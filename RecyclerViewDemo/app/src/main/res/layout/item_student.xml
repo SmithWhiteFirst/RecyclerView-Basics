@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#d2d2d2"
+    android:id="@+id/llItemStudents"
+    android:layout_margin="8dp"
+    >
+
+    <!--TODO(4): Remember to change the height of LinearLayout to wrap_content and also add its ID-->
+
+    <!--TODO(5): Add two TextView which will display student name and mobile number respectively-->
+
+    <TextView
+        android:id="@+id/tvStudentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/tvMobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        />
+
+</LinearLayout>

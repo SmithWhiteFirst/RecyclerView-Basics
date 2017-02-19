@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!--TODO(2): RecyclerView inside FrameLayout-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvStudents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+    <!--TODO(3): Create one layout resource with item_student.xml name-->
+
+</FrameLayout>
