@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+@SuppressWarnings("unused")
 public class LeftDividerItemDecorator extends RecyclerView.ItemDecoration {
     private final Drawable mDivider;
     private final Rect mBounds = new Rect();
@@ -19,7 +20,7 @@ public class LeftDividerItemDecorator extends RecyclerView.ItemDecoration {
     }
 
     public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
-        if (parent.getLayoutManager() != null && this.mDivider != null) {
+        if (parent.getLayoutManager() != null && mDivider != null) {
             drawLeftDivider(c, parent);
         }
     }
@@ -46,7 +47,7 @@ public class LeftDividerItemDecorator extends RecyclerView.ItemDecoration {
             int top = child.getTop();
             int bottom = child.getBottom();
 
-            // Draw left vertical divider, add space at top and bottom by 1dp
+            // Draw left vertical divider
             mDivider.setBounds(
                     left,
                     top,
