@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
         // Option Grid
-        //layoutManager = new GridLayoutManager(this, 2);
+        layoutManager = new GridLayoutManager(this, 2);
 
         // Option Linear
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
-        recyclerView.addItemDecoration(new LeftDividerItemDecorator(this));
+        //layoutManager = new LinearLayoutManager(this);
+        //recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
+        //recyclerView.addItemDecoration(new LeftDividerItemDecorator(this));
 
         recyclerView.setLayoutManager(layoutManager);
 
