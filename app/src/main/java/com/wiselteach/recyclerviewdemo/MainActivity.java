@@ -1,37 +1,36 @@
 package com.wiselteach.recyclerviewdemo;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wiselteach.recyclerviewdemo.utils.Cheeses;
-import com.wiselteach.recyclerviewdemo.utils.Colors;
-
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    private Random random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        random = new Random(System.currentTimeMillis());
-
         recyclerView = findViewById(R.id.recyclerView);
-        layoutManager = new GridLayoutManager(this, 2);
+
+        layoutManager = new LinearLayoutManager(this);
+
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
+        recyclerView.addItemDecoration(new LeftDividerItemDecorator(this));
         recyclerView.setAdapter(new RecyclerView.Adapter() {
             @NonNull
             @Override
@@ -41,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams layoutParams = inflate.getLayoutParams();
                 layoutParams.height = (int) (getResources().getDisplayMetrics().scaledDensity * 56);
                 inflate.setLayoutParams(layoutParams);
-
-                int randomColor = random.nextInt(Colors.COLORS.length);
-                inflate.setBackgroundColor(Color.parseColor(Colors.COLORS[randomColor]));
 
                 return new RecyclerViewViewHolder(inflate);
             }
@@ -65,4 +61,5 @@ public class MainActivity extends AppCompatActivity {
             super(itemView);
         }
     }
+
 }
