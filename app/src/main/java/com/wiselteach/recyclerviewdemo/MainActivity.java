@@ -3,13 +3,11 @@ package com.wiselteach.recyclerviewdemo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wiselteach.recyclerviewdemo.utils.Cheeses;
@@ -26,11 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
 
-        layoutManager = new LinearLayoutManager(this);
+        //layoutManager = new LinearLayoutManager(this);
+        layoutManager = new GridLayoutManager(this, 2);
 
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
-        recyclerView.addItemDecoration(new LeftDividerItemDecorator(this));
+
+        //recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
+        //recyclerView.addItemDecoration(new LeftDividerItemDecorator(this));
+
         recyclerView.setAdapter(new RecyclerView.Adapter() {
             @NonNull
             @Override
